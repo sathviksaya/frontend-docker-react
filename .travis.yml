@@ -8,3 +8,11 @@ before_install:
 
 script:
   - docker run -e CI=true sathvik/frontend-docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "frontend-docker-react"
+  env: "Frontend-docker-react-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-718333031096"
+  bucker_path: "frontend-docker-react"
